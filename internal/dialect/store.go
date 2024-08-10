@@ -69,6 +69,8 @@ func NewStore(d Dialect) (Store, error) {
 		querier = &dialectquery.Ydb{}
 	case Turso:
 		querier = &dialectquery.Turso{}
+	case Questdb:
+		querier = &dialectquery.Questdb{}
 	default:
 		return nil, fmt.Errorf("unknown querier dialect: %v", d)
 	}
